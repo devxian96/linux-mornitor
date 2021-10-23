@@ -21,6 +21,9 @@ const App = () => {
           secondary: {
             main: "#05121B",
           },
+          background: {
+            default: "#05121B",
+          },
         },
       }),
     [prefersDarkMode]
