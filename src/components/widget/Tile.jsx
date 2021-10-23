@@ -11,6 +11,7 @@ const Tile = ({ Component, title }) => {
         width: "100%",
         minHeight: "100px",
         backgroundColor: "#0F1C25",
+        borderRadius: "0",
       }}
     >
       <Box
@@ -24,7 +25,7 @@ const Tile = ({ Component, title }) => {
         <Box sx={{ width: "100%", maxWidth: "200px" }}>
           {Component !== undefined ? <Component /> : <Loading />}
         </Box>
-        <Box sx={{ flex: "1", verticalAlign: "middle" }}>
+        <Box sx={{ flex: "1", verticalAlign: "middle", lineHeight: "100px" }}>
           {title ? title : ""}
         </Box>
       </Box>
