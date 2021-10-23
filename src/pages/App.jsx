@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { CssBaseline, useMediaQuery } from "@mui/material";
+import { CssBaseline, useMediaQuery, Container } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Particles from "react-particles-js";
 import styles from "./App.module.css";
@@ -33,7 +33,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Particles
-        className={styles.background}
+        canvasClassName={styles.background}
         params={{
           color: "#75A5B7",
           maxParticles: 130,
@@ -56,11 +56,18 @@ const App = () => {
       />
       <Router>
         <Header />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <Container
+          maxWidth="xl"
+          sx={{
+            paddingTop: "8px",
+          }}
+        >
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </Container>
       </Router>
     </ThemeProvider>
   );
