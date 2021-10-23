@@ -8,6 +8,7 @@ import Home from "./Home";
 const App = () => {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
+  // Dark Mode 테마 설정
   const theme = useMemo(
     () =>
       createTheme({
@@ -19,10 +20,10 @@ const App = () => {
   );
 
   return (
-    <ThemeProvider them={theme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header />
       <Router>
+        <Header />
         <Switch>
           <Route exact path="/">
             <Home />
