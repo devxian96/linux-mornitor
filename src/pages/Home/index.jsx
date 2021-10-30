@@ -1,6 +1,57 @@
 import React, { useEffect } from "react";
 import { Box } from "@mui/material";
 import Tile from "../../components/widget/Tile";
+import WildeTile from "../../components/widget/WildeTile";
+import { Doughnut } from "react-chartjs-2";
+
+const Pie = () => {
+  const data = {
+    datasets: [
+      {
+        data: [90, 10],
+        backgroundColor: ["rgba(164, 228, 61, 0.2)", "rgba(38, 52, 64, 0.8)"],
+        borderColor: ["rgba(164, 228, 61, 1)", "rgba(38, 52, 64, 1)"],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  return (
+    <Box sx={{ position: "relative" }}>
+      <Doughnut data={data} />
+      <Box
+        sx={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "center",
+        }}
+      >
+        90%
+      </Box>
+    </Box>
+  );
+};
+
+const Circle = ({ color, value, type }) => {
+  return (
+    <Box
+      sx={{
+        width: "100%",
+        maxWidth: "100px",
+        height: "100px",
+        backgroundColor: color,
+        borderRadius: "75px",
+        textAlign: "center",
+        lineHeight: "100px",
+      }}
+    >
+      {value}
+      {type}
+    </Box>
+  );
+};
 
 const Home = () => {
   useEffect(() => {
@@ -8,31 +59,61 @@ const Home = () => {
   }, []);
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexWrap: "nowrap",
-      }}
-    >
-      <Tile
-        Component={() => {
-          return <div>hi</div>;
+    <>
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "nowrap",
         }}
-        title="CPU 사용량"
-      />
-      <Tile
-        Component={() => {
-          return <div>hi</div>;
+      >
+        <Tile
+          component={() => {
+            return <Pie />;
+          }}
+          title="CPU"
+        />
+        <Tile
+          component={() => {
+            return <Pie />;
+          }}
+          title="RAM"
+        />
+        <Tile
+          component={() => {
+            return <Pie />;
+          }}
+          title="HDD/SDD"
+        />
+      </Box>
+
+      <WildeTile />
+
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "nowrap",
         }}
-        title="RAM 사용량"
-      />
-      <Tile
-        Component={() => {
-          return <div>hi</div>;
-        }}
-        title="HDD/SDD 사용량"
-      />
-    </Box>
+      >
+        <Tile
+          component={() => {
+            return <Circle color="#F0895C" value={70} type="kbps" />;
+          }}
+          title="보내기"
+        />
+        <Tile
+          component={() => {
+            return <Circle color="#B83B5D" value={70} type="kbps" />;
+          }}
+          title="받기"
+        />
+        <Tile
+          component={() => {
+            return <Circle color="#6A2B71" value={10} type="ms" />;
+          }}
+          title="PING"
+        />
+      </Box>
+    </>
   );
 };
 

@@ -8,8 +8,8 @@ import Header from "../components/Header";
 import Home from "./Home";
 
 const App = () => {
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   // Dark Mode 테마 설정
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const theme = useMemo(
     () =>
       createTheme({
@@ -63,9 +63,7 @@ const App = () => {
           }}
         >
           <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
+            <Route exact path="/" component={Home} />
           </Switch>
         </Container>
       </Router>

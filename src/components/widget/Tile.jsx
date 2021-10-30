@@ -4,7 +4,7 @@ const Loading = () => {
   return <div>Loading</div>;
 };
 
-const Tile = ({ Component, title }) => {
+const Tile = ({ component: Component, title }) => {
   return (
     <Card
       sx={{
@@ -16,16 +16,32 @@ const Tile = ({ Component, title }) => {
     >
       <Box
         sx={{
-          display: "flex",
+          display: { md: "flex", sm: "block" },
+          position: "relative",
+          minHeight: "100px",
           flexWrap: "nowrap",
           p: 1,
           m: 1,
         }}
       >
-        <Box sx={{ width: "100%", maxWidth: "200px" }}>
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: { lg: "180px", md: "150px", sm: "120px" },
+          }}
+        >
           {Component !== undefined ? <Component /> : <Loading />}
         </Box>
-        <Box sx={{ flex: "1", verticalAlign: "middle", lineHeight: "100px" }}>
+        <Box
+          sx={{
+            flex: "1",
+            position: "absolute",
+            top: { md: "50%", sm: "90%" },
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            textAlign: "center",
+          }}
+        >
           {title ? title : ""}
         </Box>
       </Box>
