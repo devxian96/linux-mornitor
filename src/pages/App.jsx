@@ -6,6 +6,7 @@ import Particles from "react-particles-js";
 import styles from "./App.module.css";
 import Header from "../components/Header";
 import Home from "./Home";
+import Process from "./Process";
 
 const App = () => {
   // Dark Mode 테마 설정
@@ -64,6 +65,7 @@ const App = () => {
         >
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/process" component={Process} />
           </Switch>
         </Container>
       </Router>

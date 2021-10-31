@@ -1,5 +1,5 @@
 import { Line } from "react-chartjs-2";
-import { Card } from "@mui/material";
+import { Card, Box } from "@mui/material";
 
 const WildeTile = () => {
   const data = {
@@ -21,19 +21,34 @@ const WildeTile = () => {
         beginAtZero: true,
       },
     },
+    responsive: true,
+    maintainAspectRatio: false,
   };
 
   return (
     <Card
       sx={{
         width: "100%",
-        minHeight: "100px",
+        maxHeight: "400px",
         backgroundColor: "#0F1C25",
         borderRadius: "0",
         marginTop: "24px",
         marginBottom: "24px",
       }}
     >
+      <Box
+        sx={{
+          paddingTop: "8px",
+          paddingBottom: "8px",
+          paddingLeft: "12px",
+          marginTop: 0,
+          marginBottom: 0,
+          backgroundColor: "#0F1C25",
+        }}
+        component="h4"
+      >
+        네트워크 사용량
+      </Box>
       <Line data={data} options={options} />
     </Card>
   );

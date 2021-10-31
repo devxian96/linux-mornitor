@@ -17,7 +17,7 @@ import { Menu } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
-const ListMenu = () => {
+const ListMenu = ({ setDraw }) => {
   return (
     <List sx={{ minWidth: "240px" }}>
       <Box
@@ -32,7 +32,7 @@ const ListMenu = () => {
           Linux Monitor
         </Typography>
       </Box>
-      <Link to="/">
+      <Link to="/" onClick={() => setDraw(false)}>
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
@@ -40,6 +40,19 @@ const ListMenu = () => {
             </ListItemIcon>
             <ListItemText
               primary="홈"
+              sx={{ color: "white", textDecoration: "none" }}
+            />
+          </ListItemButton>
+        </ListItem>
+      </Link>
+      <Link to="/process" onClick={() => setDraw(false)}>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary="프로세스"
               sx={{ color: "white", textDecoration: "none" }}
             />
           </ListItemButton>
@@ -74,7 +87,7 @@ const Header = () => {
 
       {/* Aside Menu */}
       <Drawer open={draw} onClose={() => setDraw(false)}>
-        <ListMenu />
+        <ListMenu setDraw={setDraw} />
       </Drawer>
     </>
   );

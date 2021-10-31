@@ -4,6 +4,7 @@ import Tile from "../../components/widget/Tile";
 import WildeTile from "../../components/widget/WildeTile";
 import { Doughnut } from "react-chartjs-2";
 
+// 도넛형 그래프
 const Pie = () => {
   const data = {
     datasets: [
@@ -34,6 +35,7 @@ const Pie = () => {
   );
 };
 
+// 원형 아이콘
 const Circle = ({ color, value, type }) => {
   return (
     <Box
@@ -112,6 +114,21 @@ const Home = () => {
           }}
           title="PING"
         />
+      </Box>
+
+      <Box
+        sx={{
+          width: "100%",
+          minHeight: "100px",
+          marginTop: "24px",
+          backgroundColor: "#1b2830",
+          borderRadius: "0",
+          padding: "20px",
+        }}
+      >
+        <p>디바이스 이름</p>
+        <p>장비 사양</p>
+        <p>배포판</p>
       </Box>
     </>
   );
