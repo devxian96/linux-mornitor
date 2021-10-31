@@ -12,3 +12,6 @@ $app->get('/', function ($req, $res) {
         $res->send($e);
     }
 });
+
+// 404 return
+$app->listen();
