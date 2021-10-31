@@ -58,6 +58,19 @@ const ListMenu = ({ setDraw }) => {
           </ListItemButton>
         </ListItem>
       </Link>
+      <Link to="/fileManage" onClick={() => setDraw(false)}>
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary="탐색기"
+              sx={{ color: "white", textDecoration: "none" }}
+            />
+          </ListItemButton>
+        </ListItem>
+      </Link>
     </List>
   );
 };
