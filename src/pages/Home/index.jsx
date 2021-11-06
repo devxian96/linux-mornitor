@@ -101,7 +101,6 @@ const Home = () => {
   // 5초마다 데이터 갱신
   useInterval(() => {
     interval();
-    console.log(rxArray.length);
     if (rxArray.length > 6) {
       let tmp = rxArray;
       tmp.shift();
