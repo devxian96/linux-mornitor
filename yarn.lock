@@ -11453,6 +11453,11 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   dependencies:
     minimalistic-assert "^1.0.0"
 
+web-pingjs@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/web-pingjs/-/web-pingjs-1.0.1.tgz#4de7d3c678482571a4faba9872d189d908fe83af"
+  integrity sha512-rlAeWwOWLYpFUAzi1edajOm6iWsP4EVnjl7qXsyXglVt8Wuwxo1d8GQgeyZ6Ze3gRf0xtvQCmb2eQ1OOAGbN1A==
+
 web-vitals@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-1.1.2.tgz#06535308168986096239aa84716e68b4c6ae6d1c"
