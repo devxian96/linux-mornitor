@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import { InsertDriveFile, Folder, AccountTree } from "@mui/icons-material";
+import axios from "../../plugin/axios";
 
 // 파일 아이콘
 const FileIcon = ({ name, focus, onClick }) => {
@@ -60,6 +61,19 @@ const FileManage = () => {
       setFocus(name);
     }
   };
+
+  useEffect(() => {
+    axios.get("/file?path=-la /").then(({ data }) => {
+      data = data.split(" ");
+      data.shift();
+      data = data.map((el, index) => {
+        if (index % 10 === 0) {
+          console.log(el);
+        }
+      });
+      console.log(data);
+    });
+  }, []);
 
   return (
     <Box

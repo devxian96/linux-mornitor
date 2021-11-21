@@ -58,6 +58,7 @@ const ListMenu = ({ setDraw }) => {
           </ListItemButton>
         </ListItem>
       </Link>
+      {/* 시간상 구현 불가
       <Link to="/fileManage" onClick={() => setDraw(false)}>
         <ListItem disablePadding>
           <ListItemButton>
@@ -71,6 +72,7 @@ const ListMenu = ({ setDraw }) => {
           </ListItemButton>
         </ListItem>
       </Link>
+       */}
     </List>
   );
 };
